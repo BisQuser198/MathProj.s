@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Factorial.views import factorial_view, factorial_template_view 
+from multiplication.views import multiplication
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('factorial/<n>/', factorial_view), # need to add the comma after
     path('template/<n>', factorial_template_view), # the <n> is a variable which needs to be matched in html, see app_name/template --> views.py
+    path('multiplication/<num>', multiplication)
 ]
