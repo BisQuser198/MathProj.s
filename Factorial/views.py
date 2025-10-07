@@ -15,3 +15,7 @@ def factorial_view(request, n):
 def factorial_template_view(request, n):
     context = {'n':n}
     return render(request, 'factorial.html', context) 
+
+def function_view(request, user_input):
+    context = {'user_input':user_input}
+    return render(request, 'function.html', context)
