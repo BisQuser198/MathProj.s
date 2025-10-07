@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Factorial.views import factorial_view, factorial_template_view
 from multiplication.views import multiplication
 from function.views import function_view
@@ -26,5 +26,5 @@ urlpatterns = [
     path('factorial/<n>/', factorial_view), # need to add the comma after
     path('template/<n>', factorial_template_view), # the <n> is a variable which needs to be matched in html, see app_name/template --> views.py
     path('multiplication/<num>', multiplication),
-    path('function/<user_input>', function_view),
+    path('function/', include('function.urls')),
 ]
