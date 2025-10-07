@@ -7,27 +7,25 @@
 </head>
 <body>
     <h1>ATP's Function Input Form</h1>
-    <h2>Function is: a*x^2 + b*x + c </h2>
+    <h2>Function is: a*x^2 + b*x </h2>
 
     <form action="" method="get">
-    <input type="text" name="user_input" id=""><br>
-    <p><input type="text" name="user_input2" id=""></p>
-    <input type="submit" value="Submit Value - Ex: x = ?">
-
-
-    <!-- <input type="submit" value="Submit a Function - Ex: x^2 + 2x + 1"> -->
+    <p><h3>x = <input type="text" name="user_input" id=""></h3></p>
+    <p><h3>a = <input type="text" name="user_input2" id=""></h3></p>
+    <p><h3>b = <input type="text" name="user_input3" id=""></h3></p>
+    <input type="submit" value="Submit Values">
 
 </form> 
 {% comment %} form needs to close after input {% endcomment %}
-    {% if user_input %}
-    <h1>Input = {{user_input}}</h1>
-    {% endif %}
-{% comment %} ïf user_input, then display user_input {% endcomment %}
 {% comment %} if html, then TAB works else Django Template {% endcomment %}
 
 {% if value_of_F %}
     <h1>Function = {{value_of_F}}</h1>
     {% endif %}
+
+{% if previous_value_of_F %}
+    <h2>Previous Function = {{previous_value_of_F}}</h2>
+{% endif %}
 
 </body>
 </html>
